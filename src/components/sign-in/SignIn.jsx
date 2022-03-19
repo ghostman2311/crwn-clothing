@@ -3,8 +3,7 @@ import FormInput from "../form-input/FormInput";
 import CustomButton from "../custom-button/CustomButton";
 import "./sign-in.scss";
 import { auth } from "../../firebase/firebase.utils";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
+import { signInWithGoogle } from "../../firebase/firebase.utils";
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
@@ -15,16 +14,16 @@ class SignIn extends React.Component {
     };
   }
 
-  signInWithGoogle = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // signInWithGoogle = () => {
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithPopup(auth, provider)
+  //     .then((result) => {
+  //       console.log(result);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   onSubmitHandler = (event) => {
     event.preventDefault();
@@ -65,7 +64,7 @@ class SignIn extends React.Component {
           />
           <div className="buttons">
             <CustomButton type="submit">Sign In</CustomButton>
-            <CustomButton onClick={this.signInWithGoogle} isGoogleSignIn>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
               Sign In With Google
             </CustomButton>
           </div>
