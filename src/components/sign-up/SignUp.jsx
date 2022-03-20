@@ -83,9 +83,9 @@ class SignUp extends React.Component {
           />
           <FormInput
             type="password"
-            name="confirmpassword"
+            name="confirmPassword"
             value={confirmPassword}
-            label="COnfirm Password"
+            label="Confirm Password"
             required
             onChange={this.handleChange}
           />
@@ -95,3 +95,5 @@ class SignUp extends React.Component {
     );
   }
 }
+
+export default SignUp;
