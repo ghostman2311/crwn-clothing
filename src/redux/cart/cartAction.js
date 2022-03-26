@@ -6,6 +6,13 @@ export const toggleCart = () => {
   };
 };
 
+export const clearItemFromCart = (item) => {
+  return {
+    type: cartActionTypes.CLEAR_ITEM_FROM_CART,
+    payload: item,
+  };
+};
+
 export const addItem = (item) => {
   return {
     type: cartActionTypes.ADD_ITEM,
